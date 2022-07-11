@@ -1,0 +1,8 @@
+<nav class="navbar-wrapper">
+    <h2 class="logo">Dungeon<br>&nbsp;Companion</h2>
+    <ul>
+        <li (click)="scrollTo('home')">Home</li>
+        <li (click)="scrollTo('browse')">Browse</li>
+        <li [routerLink]="['/payment']" routerLinkActive="router-link-active">Pay Items ({{cart.length}})</li>
+    </ul>
+</nav>

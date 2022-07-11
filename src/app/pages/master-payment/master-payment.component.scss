@@ -1,0 +1,64 @@
+section {
+    background-color: #f4f4f4;
+    min-height: calc(50vh - 40px);
+}
+
+.cart-section {
+    padding: 2rem;
+    h2 {
+        font-family: "DnD font";
+        font-size: 1.8em;
+        font-weight: 700;
+    }
+}
+
+.poster {
+    cursor: default !important;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 800px;
+    height: 400px;
+    padding: 2rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.row {
+    display: flex;
+    gap: 2rem;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1 1 200px;
+    label {
+        color: #727272;
+        font-weight: 500;
+    }
+    input {
+        padding-inline: 1rem;
+        font-weight: 500;
+    }
+}
+
+.pay-btn {
+    justify-self: flex-end;
+    padding-inline: 2rem;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}

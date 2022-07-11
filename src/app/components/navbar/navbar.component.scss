@@ -1,0 +1,34 @@
+.navbar-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-inline: 2rem;
+    justify-content: space-between;
+    background-color: rgb(112, 179, 255);
+}
+
+.logo {
+    text-transform: uppercase;
+    font-family: "DnD font", sans-serif;
+    font-size: 1.8em;
+    cursor: pointer;
+    transition: 0.3s ease all;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+ul {
+    display: flex;
+    gap: 2rem;
+    text-transform: uppercase;
+    li {
+        cursor: pointer;
+        font-family: "DnD font", sans-serif;
+        transition: 0.3s ease all;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}

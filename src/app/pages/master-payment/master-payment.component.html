@@ -1,0 +1,49 @@
+<section class="cart-section">
+    <h2>Your Items</h2>
+    <div class="poster-list">
+        <div class="poster" *ngFor="let product of product_list">
+            <img src="assets/images/favicon.png" alt="">
+            <p class="poster-name">{{product.name}}</p>
+            <p class="poster-price">{{product.price | currency}}</p>
+        </div>
+    </div>
+    <h2>Total: {{total_price | currency}}</h2>
+</section>
+<section class="payment-form">
+    <div class="form">
+        <div class="row">
+            <div class="input">
+                <label for="">Card Number</label>
+                <input type="text" mask="0000 0000 0000 0000" [(ngModel)]="card.number">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input">
+                <label for="">Card Holder</label>
+                <input type="text" mask="S*" [(ngModel)]="card.name">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input">
+                <label for="">Expiration Date</label>
+                <input type="text" placeholder="12/27" mask="00/00" [(ngModel)]="card.expiration_date">
+            </div>
+            <div class="input">
+                <label for="">CVV2</label>
+                <input type="password" placeholder="123" mask="0000" [(ngModel)]="card.cvv2">
+            </div>
+        </div>
+        <div class="row" style="display: grid;">
+            <button class="pay-btn" [ngClass]="{'loading':loading}"
+                [class.disabled]="card.number=='' || card.name == '' || card.expiration_date == '' || card.cvv2 == ''"
+                (click)="payPretend()">Pay</button>
+        </div>
+    </div>
+</section>
+
+<div class="modal-container" [class.show-modal]="showModal">
+    <div class="modal-background" (click)="hideModal()"></div>
+    <div class="modal">
+        <p>{{modal_message}}</p>
+    </div>
+</div>

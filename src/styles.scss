@@ -1,0 +1,244 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+footer,
+header,
+nav,
+section,
+main {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+@font-face {
+    font-family: "DnD font";
+    src: url("/assets/fonts/Vecna Bold.otf");
+}
+
+navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 6rem;
+    z-index: 99;
+}
+
+.poster-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin-top: 4rem;
+    gap: 4rem;
+    padding-inline: 2rem;
+    .poster {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        min-height: 350px;
+        cursor: pointer;
+        img {
+            width: 100%;
+        }
+        p {
+            font-weight: 500;
+        }
+        .poster-name {
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            line-height: 1.5em;
+        }
+        .poster-price {
+            font-weight: 700;
+        }
+        button {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+}
+
+input,
+select {
+    border: 1px solid #727272;
+    border-radius: 10px;
+    height: 40px;
+    font-size: 1em;
+}
+
+button {
+    font-family: "DnD font";
+    border: none;
+    height: 40px;
+    text-transform: uppercase;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #ff1515;
+    color: rgb(253, 253, 253);
+    transition: 0.3s ease all;
+    &:hover {
+        background-color: #d30404;
+    }
+    &.loading {
+        background-image: url("/assets/spinner.svg");
+        background-position: center;
+        background-size: 40px;
+        background-repeat: no-repeat;
+        cursor: wait;
+        color: transparent !important;
+        pointer-events: none;
+    }
+    &.disabled {
+        pointer-events: none;
+        background-color: #727272;
+    }
+}
+
+.modal-container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s all ease;
+    z-index: 100;
+    .modal-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    .modal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 90%;
+        max-width: 500px;
+        height: max-content;
+        min-height: 300px;
+        background-color: #252525;
+        border-radius: 5px;
+        overflow: hidden;
+        border-radius: 10px;
+        p {
+            line-height: 2em;
+            text-align: center;
+            font-size: 1.2em;
+            padding-inline: 30px;
+            padding-bottom: 1rem;
+            color: white;
+        }
+    }
+}
+
+.show-modal {
+    opacity: 1;
+    pointer-events: auto;
+}
