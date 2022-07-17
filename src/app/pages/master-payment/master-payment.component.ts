@@ -29,9 +29,9 @@ export class MasterPaymentComponent implements OnInit {
 
   async ngOnInit() {
     let cart = this.api_service.getCart()
-    /* if (!cart.length) {
+    if (!cart.length) {
       this.displayModal('There are no items on your cart. Returning to home page.')
-    } */
+    }
     this.product_list = cart
     this.total_price = this.product_list.reduce((prev: number, current: any) => prev += current.price, 0)
   }
